@@ -1,0 +1,60 @@
+<div class="signup-container">
+  <i class="fa-solid fa-user-plus"></i>
+  <br>  
+  <h1>Create User Profile</h1>  
+    
+      
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" formControlName="firstName" required>
+          <div *ngIf="signupForm.controls['firstName'].hasError('required')&&signupForm.controls['firstName'].touched">
+            <h5>First Name required</h5>
+          </div>
+          <div *ngIf="signupForm.controls['firstName'].hasError('minlength')&&signupForm.controls['firstName'].touched">
+            <h5>name not valid</h5>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" formControlName="lastName" required>
+          <div *ngIf="signupForm.controls['lastName'].hasError('required')&&signupForm.controls['lastName'].touched">
+            <h5>Last Name required</h5>
+          </div>
+          <div *ngIf="signupForm.controls['lastName'].hasError('minlength')&&signupForm.controls['lastName'].touched">
+            <h5>surname invalid</h5>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="userName">Emial:</label>
+          <input type="text" id="userName" formControlName="userName" required>
+          <div *ngIf="signupForm.controls['userName'].hasError('required')&&signupForm.controls['userName'].touched">
+            <h5>Email required</h5>
+          </div>
+          <div *ngIf="signupForm.controls['userName'].hasError('email')&&signupForm.controls['userName'].touched">
+            <h5>email not valid</h5>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" required>
+        </div>
+        <div class="form-group" hidden>
+          <label for="role">Role:</label>
+          <select id="role" formControlName="role" required>
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+          </select>
+        </div>
+        <div class="form-group" hidden>
+          <label for="daysOff">Days Off:</label>
+          <input type="number" id="daysOff" formControlName="daysOff" required>
+        </div>
+        <div class="form-group" hidden>
+      <label for="createdBy">Created By:</label>
+      <input type="text" id="createdBy" formControlName="createdBy">
+    </div>
+        <button type="submit" [disabled]="signupForm.invalid">Create</button>
+      </form>
+    </div>
+    

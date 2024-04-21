@@ -1,0 +1,95 @@
+
+
+
+        <div class="user-info-container">
+          <h2>User Information</h2>
+            <h1>Name</h1>
+            <p>{{ currentUser.firstName }}</p>
+            <h1>Surname</h1>
+            <p> {{ currentUser.lastName }}</p>
+            <h1>Days Off</h1>
+            <p>{{currentUser.daysOff}} / 20</p>
+          </div>
+    
+        <div class="timesheet-table-container">
+          <h2>User Timesheets</h2>
+            <table class="timesheet-table">
+              <thead>
+                <tr>
+                  <th>From Date</th>
+                  <th>To Date</th>
+                  <th>Status</th>
+                  <!-- <th>Note</th> -->
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let timesheet of timesheets | createdAtPipe" [ngClass]="{
+                  'pending': timesheet.status === 'PENDING',
+                  'accepted': timesheet.status === 'ACCEPTED',
+                  'declined': timesheet.status === 'REJECTED'
+                }">
+                  <td>{{ timesheet.fromDate | date }}</td>
+                  <td>{{ timesheet.toDate | date }}</td>
+                  <td>{{ timesheet.status }}</td>
+                  <!-- <td>{{ timesheet.note }}</td> -->
+                  <td><i class="fa-solid fa-file-circle-minus" (click)="removeTimeSheet(timesheet.id)"></i>
+                    <span style="margin-left: 20px;"></span>
+                  <i class="fa-solid fa-wand-magic-sparkles" (click)="navigateToUserTimesheets(timesheet.id)"></i>
+                </tr>
+              </tbody>
+            </table>
+          </div> 
+ 
+
+        <div class="new-timesheet-form">
+            <h2>Create New Timesheet</h2>
+            <form [formGroup]="timesheetForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="fromDate">From Date:</label>
+                <input type="date" id="fromDate" formControlName="fromDate" required>
+              </div>
+              <div class="form-group">
+                <label for="toDate">To Date:</label>
+                <input type="date" id="toDate" formControlName="toDate" required>
+              </div>
+              <div class="form-group" hidden>
+                <label for="status">Status:</label>
+                <select id="status" formControlName="status"  required>
+                  <option value="PENDING" disabled>Pending</option>
+                  <option value="APPROVED" disabled>Approved</option>
+                  <option value="REJECTED" disabled>Rejected</option>
+                </select>
+              </div>
+              <div class="form-group" hidden>
+                <label for="createdBy">Created By:</label>
+                <input type="text" id="createdBy" formControlName="createdBy" required>
+            </div>
+            <div class="form-group">
+              <label for="note">Note:</label>
+              <textarea id="note" formControlName="note"></textarea>
+            </div>
+            <div class="form-group" hidden>
+              <label for="userId" >User ID:</label>
+              <input type="number" id="userId" formControlName="userId">
+              
+            </div>
+
+            <button type="submit" [disabled]="timesheetForm.invalid">Create Timesheet</button>
+              
+            </form>
+          </div>
+          
+ 
+            
+  
+  
+
+
+
+
+  
+
+
+
+  

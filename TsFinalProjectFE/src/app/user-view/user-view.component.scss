@@ -1,0 +1,144 @@
+
+.user-info-container {
+  float: left;
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  
+}
+
+/* User info title */
+.user-info-container h1 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  
+  border-bottom: 1px solid #007bff; 
+  padding-bottom: 10px;
+}
+
+/* User info details */
+.user-info-container p {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #000000;
+}
+
+/* User info icon */
+.user-info-container i {
+  font-size: 2em;
+  color: #007bff;
+}
+
+
+/* Timesheet table container */
+.timesheet-table-container {
+  float: right;
+  width: 30%; /* Adjust as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  
+  border-radius: 10px;
+}
+
+/* Additional styling for the table */
+.timesheet-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Additional styling for table headers and cells */
+.timesheet-table th,
+.timesheet-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Additional styling for table headers */
+.timesheet-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+/* Additional styling for table cells */
+.timesheet-table td {
+  color: #000000;
+}
+
+/* Additional styling for table cells on hover */
+.timesheet-table tbody tr:hover {
+  background-color: #e3e3e3;
+}
+
+/* New timesheet form container */
+.new-timesheet-form {
+  width: 30%; /* Adjust as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  
+  border-radius: 10px;
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Additional styling for form elements */
+.new-timesheet-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Additional styling for form labels */
+.new-timesheet-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Additional styling for form inputs */
+.new-timesheet-form input[type="date"],
+.new-timesheet-form textarea {
+  width: calc(100% - 20px); /* Adjust as needed */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Additional styling for form textarea */
+.new-timesheet-form textarea {
+  height: 80px; /* Adjust as needed */
+  resize: none;
+}
+
+/* Additional styling for form button */
+.new-timesheet-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Additional styling for form button on hover */
+.new-timesheet-form button:hover {
+  background-color: #0056b3;
+}
+
+.pending {
+  background-color: gray;
+}
+
+.accepted {
+  background-color: green;
+}
+
+.declined {
+  background-color: red;
+}
+
+
+
+  
+  
+  

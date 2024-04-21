@@ -1,0 +1,34 @@
+.timesheet-table-container {
+    margin: 0 auto; 
+    margin-top: 20px; 
+    width: 80%; 
+  }
+  
+  .timesheet-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .timesheet-table th, .timesheet-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .timesheet-table th {
+    background-color: #f2f2f2;
+  }
+
+
+  .pending {
+    background-color: gray;
+  }
+  
+  .accepted {
+    background-color: green;
+  }
+  
+  .declined {
+    background-color: red;
+  }
+  

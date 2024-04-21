@@ -1,0 +1,32 @@
+<div class="timesheet-table-container">
+  <h2>User Timesheets</h2>
+    <table class="timesheet-table">
+      <thead>
+        <tr>
+          <th>From Date</th>
+          <th>To Date</th>
+          <th>Status</th>
+          <th>Note</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let timesheet of timesheets " [ngClass]="{
+          'pending': timesheet.status === 'PENDING',
+          'accepted': timesheet.status === 'ACCEPTED',
+          'declined': timesheet.status === 'REJECTED'
+        }">
+          <td>{{ timesheet.fromDate | date }}</td>
+          <td>{{ timesheet.toDate | date }}</td>
+          <td>{{ timesheet.status }}</td>
+          <td>{{ timesheet.note }}</td>
+          <td>
+            <i class="fa-solid fa-file-circle-minus" (click)="removeTimeSheet(timesheet.id)"></i>
+            <span style="margin-left: 20px;"></span>
+            <i class="fa-solid fa-wand-magic-sparkles" (click)="navigateToUserTimesheets(timesheet.id)"></i>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div> 

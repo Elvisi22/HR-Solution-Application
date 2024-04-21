@@ -1,0 +1,28 @@
+
+<div class="login-container" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <img src="/assets/4.png" alt="image/x-icon" class="small-logo">
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+          <form (ngSubmit)="login()" [formGroup]="loginForm">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Email" name="userName" formControlName="userName"  #userName required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="password" placeholder="Password" name="password" formControlName="password" #password  required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+          <br>         
+          <hr>
+          <br>
+          <p>Don't have account ? Click <a routerLink="/signup"> here </a> to sign up</p>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+  
+  

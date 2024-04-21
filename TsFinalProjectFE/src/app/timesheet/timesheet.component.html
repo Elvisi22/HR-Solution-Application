@@ -1,0 +1,31 @@
+<div class="new-timesheet-form">
+    <h2>Create New Timesheet</h2>
+    <form [formGroup]="timesheetForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" formControlName="fromDate" required>
+      </div>
+      <div class="form-group">
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate" formControlName="toDate" required>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" formControlName="status" required>
+          <option value="PENDING">Pending</option>
+          <option value="APPROVED">Approved</option>
+          <option value="REJECTED">Rejected</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="note">Note:</label>
+        <textarea id="note" formControlName="note"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="userId">User ID:</label>
+        <input type="number" id="userId" formControlName="userId" required>
+      </div>
+      <button type="submit" [disabled]="timesheetForm.invalid">Create Timesheet</button>
+    </form>
+  </div>
+  

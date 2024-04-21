@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+    <h3 mat-dialog-title>Filter Users</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Filter</mat-label>
+      <mat-select [(value)]="selectedFilter">
+        <mat-option value="all">All Users</mat-option>
+        <mat-option value="latestRequests">Latest Requests</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="buttons">
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button [mat-dialog-close]="selectedFilter" cdkFocusInitial (click)="confirm()">Apply</button>
+  </div>
+  
